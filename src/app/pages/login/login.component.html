@@ -1,0 +1,38 @@
+<app-main-layout
+  title="Login into your account"
+  primaryBtnText="Login Now"
+  secondaryBtnText="Signup Now"
+  (submit)="handlClickSubmitForm()"
+>
+  <form [formGroup]="formLogin">
+    <div class="label-input-wrapper">
+      <label for="email">Email Adress</label>
+      <div class="input-icon-wrapper">
+        <input
+          id="email"
+          type="text"
+          placeholder="ex: test@gmail.com"
+          formControlName="email"
+        />
+        <div class="icon">
+          <img src="/assets/iconMail.svg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="label-input-wrapper">
+      <label for="password">Password</label>
+      <div class="input-icon-wrapper">
+        <input
+          id="password"
+          type="password"
+          placeholder="Your Password..."
+          formControlName="password"
+        />
+        <div class="icon">
+          <img src="/assets/iconLock.svg" alt="" />
+        </div>
+      </div>
+    </div>
+    <a class="forget-password">Esqueceu a senha? </a>
+  </form>
+</app-main-layout>
