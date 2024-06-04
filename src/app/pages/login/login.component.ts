@@ -33,7 +33,7 @@ export class LoginComponent {
     });
   }
 
-  handlClickSubmitForm() {
+  public handlClickSubmitForm() {
     this.loginService
       .login(this.formLogin.value.email, this.formLogin.value.password)
       .subscribe({
@@ -42,7 +42,7 @@ export class LoginComponent {
       });
   }
 
-  handlClickNavigate() {
+  public handlClickNavigate() {
     this.route.navigate(['/cadastro']);
   }
 }

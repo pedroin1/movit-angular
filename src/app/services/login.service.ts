@@ -10,7 +10,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient) {}
 
   //Criar backend
-  login(email: string, password: string) {
+  public login(email: string, password: string) {
     return this.httpClient
       .post<LoginResponse>('/login', { email, password })
       .pipe(

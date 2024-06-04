@@ -15,11 +15,11 @@ export class MainLayoutComponent {
   @Output('submit') submitFormEvent = new EventEmitter();
   @Output('navigate') navigateEvent = new EventEmitter();
 
-  submitForm() {
+  public submitForm() {
     this.submitFormEvent.emit();
   }
 
-  navigate() {
+  public navigate() {
     this.navigateEvent.emit();
   }
 }
