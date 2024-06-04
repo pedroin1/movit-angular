@@ -4,6 +4,7 @@
   secondaryBtnText="Signup Now"
   (submit)="handlClickSubmitForm()"
   (navigate)="handlClickNavigate()"
+  [btnDisabled]="!formLogin.valid"
 >
   <form [formGroup]="formLogin">
     <div class="label-input-wrapper">

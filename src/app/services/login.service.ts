@@ -20,4 +20,15 @@ export class LoginService {
         })
       );
   }
+
+  public cadastro(name: string, email: string, password: string) {
+    return this.httpClient
+      .post<LoginResponse>('/cadastro', { name, email, password })
+      .pipe(
+        tap((value) => {
+          sessionStorage.setItem(`token`, value.token),
+            sessionStorage.setItem(`username`, value.username);
+        })
+      );
+  }
 }

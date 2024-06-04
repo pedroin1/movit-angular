@@ -11,6 +11,7 @@ export class MainLayoutComponent {
   @Input() title: string = '';
   @Input() primaryBtnText: string = '';
   @Input() secondaryBtnText: string = '';
+  @Input() btnDisabled: boolean = true;
 
   @Output('submit') submitFormEvent = new EventEmitter();
   @Output('navigate') navigateEvent = new EventEmitter();

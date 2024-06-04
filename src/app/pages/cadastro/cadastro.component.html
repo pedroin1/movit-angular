@@ -4,6 +4,7 @@
   secondaryBtnText="Cancel"
   (submit)="handleClickSubmitForm()"
   (navigate)="handleClickNavigate()"
+  [btnDisabled]="!formCadastro.valid"
 >
   <form [formGroup]="formCadastro">
     <label for="email">Name</label>
