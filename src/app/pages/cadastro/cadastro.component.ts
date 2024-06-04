@@ -33,11 +33,11 @@ export class CadastroComponent {
     });
   }
 
-  handleClickSubmitForm() {
+  public handleClickSubmitForm() {
     console.log(this.formCadastro.value);
   }
 
-  handleClickNavigate() {
+  public handleClickNavigate() {
     this.route.navigate(['/login']);
   }
 }
