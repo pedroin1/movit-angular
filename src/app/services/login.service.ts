@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { tap } from 'rxjs';
+import { LoginResponse } from '../types/types';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +9,15 @@ import { Injectable } from '@angular/core';
 export class LoginService {
   constructor(private httpClient: HttpClient) {}
 
+  //Criar backend
   login(email: string, password: string) {
-    console.log(`usuario logando ${email} and ${password}`);
+    return this.httpClient
+      .post<LoginResponse>('/login', { email, password })
+      .pipe(
+        tap((value) => {
+          sessionStorage.setItem(`token`, value.token),
+            sessionStorage.setItem(`username`, value.username);
+        })
+      );
   }
 }

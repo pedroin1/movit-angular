@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MainLayoutComponent } from '../../components/main-layout/main-layout.component';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import {
   FormControl,
   FormGroup,

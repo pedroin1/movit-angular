@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 
 @Component({
@@ -23,7 +23,7 @@ export class LoginComponent {
 
   formLogin!: FormGroup;
 
-  constructor(private route: Router, private service: LoginService) {
+  constructor(private route: Router, private loginService: LoginService) {
     this.formLogin = new FormGroup({
       email: new FormControl(``, [Validators.required, Validators.email]),
       password: new FormControl(``, [
@@ -34,7 +34,12 @@ export class LoginComponent {
   }
 
   handlClickSubmitForm() {
-    console.log(this.formLogin.value);
+    this.loginService
+      .login(this.formLogin.value.email, this.formLogin.value.password)
+      .subscribe({
+        next: () => console.log(`suscesso`),
+        error: () => console.log(`erro`),
+      });
   }
 
   handlClickNavigate() {
