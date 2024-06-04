@@ -1,0 +1,78 @@
+@import "../../../variables.scss";
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    h2 {
+      margin-top: 24px;
+    }
+  }
+
+  .form-section {
+    flex-grow: 0.3;
+    padding: 0 34px;
+  }
+
+  .main-section {
+    flex-grow: 1;
+    background-color: $background-color;
+  }
+
+  .btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+
+    button {
+      width: 100%;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+
+      font-size: 14px;
+      color: $text-color;
+      font-weight: 400;
+      text-transform: uppercase;
+
+      div {
+        flex-grow: 1;
+        height: 2px;
+        background-color: $background-color;
+      }
+    }
+
+    .btn-primary {
+      color: white;
+      background-color: $color-primary;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid $color-primary;
+      color: $color-primary;
+    }
+  }
+}

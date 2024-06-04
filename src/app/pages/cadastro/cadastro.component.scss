@@ -1,0 +1,28 @@
+@import "../../../variables.scss";
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 40px 0;
+  gap: 8px;
+
+  label {
+    font-size: 22px;
+    color: $text-color;
+  }
+
+  input {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: $background-color;
+    margin-bottom: 4px;
+    border-radius: 4px;
+  }
+
+  .input-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+}

@@ -1,0 +1,57 @@
+@import "../../../variables.scss";
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 40px 0;
+  gap: 4px;
+
+  .forget-password {
+    align-self: flex-end;
+    color: $color-primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.label-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  label {
+    font-size: 22px;
+    color: $text-color;
+  }
+
+  input {
+    padding: 10px 20px;
+    background-color: $background-color;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+.input-icon-wrapper {
+  display: flex;
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-radius: 0 8px 8px 0;
+    background-color: $color-primary;
+    height: 50px;
+
+    img {
+      height: 20px;
+    }
+  }
+}
