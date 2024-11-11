@@ -34,7 +34,12 @@ export class LoginComponent implements OnInit {
     this.loginService
       .login(this.formLogin.value.email, this.formLogin.value.password)
       .subscribe({
-        next: () => this.toastService.success('Sucesso ao logar'),
+        next: () => {
+          this.toastService.success('Sucesso ao logar');
+          setTimeout(() => {
+            this.route.navigate(['/main']);
+          }, 500);
+        },
         error: () => this.toastService.error('Erro ao logar'),
       });
   }

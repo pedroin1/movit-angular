@@ -5,13 +5,20 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { routes } from './app.routes';
 
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideToastr } from 'ngx-toastr';
+import { GlobalConfig, provideToastr } from 'ngx-toastr';
+
+const ToastrConfig: Partial<GlobalConfig> = {
+  positionClass: 'toast-top-center',
+  preventDuplicates: true,
+  progressBar: true,
+  timeOut: 5000,
+};
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideAnimations(),
-    provideToastr(),
     provideHttpClient(withFetch()),
+    provideToastr(ToastrConfig),
   ],
 };

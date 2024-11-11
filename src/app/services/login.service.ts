@@ -7,16 +7,22 @@ import { LoginResponse } from '../types/types';
   providedIn: 'root',
 })
 export class LoginService {
+  private BACKEND_URL_MOCK = 'https://dummyjson.com/auth';
+  private BACKEND_URL = 'https://localhost/8080/movit';
+
   constructor(private httpClient: HttpClient) {}
 
   //Criar backend
   public login(email: string, password: string) {
     return this.httpClient
-      .post<LoginResponse>('/login', { email, password })
+      .post<LoginResponse>(`${this.BACKEND_URL_MOCK}/login`, {
+        username: 'emilys',
+        password: 'emilyspass',
+      })
       .pipe(
         tap((value) => {
-          sessionStorage.setItem(`token`, value.token),
-            sessionStorage.setItem(`username`, value.username);
+          sessionStorage.setItem(`token`, value.accessToken),
+            sessionStorage.setItem(`username`, value.firstName);
         })
       );
   }
@@ -26,8 +32,8 @@ export class LoginService {
       .post<LoginResponse>('/cadastro', { name, email, password })
       .pipe(
         tap((value) => {
-          sessionStorage.setItem(`token`, value.token),
-            sessionStorage.setItem(`username`, value.username);
+          sessionStorage.setItem(`token`, value.accessToken),
+            sessionStorage.setItem(`username`, value.firstName);
         })
       );
   }
